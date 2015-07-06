@@ -8,7 +8,7 @@ public class CloseResource {
 	private CloseResource(){
 	}
 
-	public void closeQuietly( Closeable iCloseable ) {
+	public static void closeQuietly( Closeable iCloseable ) {
 		// closing closeable object quietly idiom
 	     if ( null == iCloseable ){
 	    	 return;
