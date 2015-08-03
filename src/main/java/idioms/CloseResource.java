@@ -19,5 +19,19 @@ public class CloseResource {
 	         System.err.println( "Error while closing quietly" );
 	     }
 	}
-	
+
+	public static void closeQuietly( AutoCloseable iCloseable ) {
+		// closing AutoCloseable object quietly idiom
+	     if ( null == iCloseable ){
+             return;
+	     }
+	     try {
+             iCloseable.close();
+	     } catch ( IOException lIOException ) {
+	         System.err.println( "I/O error while closing quietly" );
+	     } catch (Exception e) {
+	         System.err.println( "Unknown error while closing quietly" );
+		}
+	}
+
 }
