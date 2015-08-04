@@ -42,6 +42,14 @@ public class House {
 			return this;
 		}
 
+		public House build(){
+			return new House( this );
+		}
+
+	}
+
+	public static void main( String[] args ){
+		House lHouse = new House.Builder( 3, 2 ).SquareMeters( 112 ).build();
 	}
 
 }
